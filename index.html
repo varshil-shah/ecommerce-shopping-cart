@@ -135,7 +135,7 @@
                                                                 <p>The total amount (including VAT)</p>
                                                                 <p>$ <span class="" id="total_cart_amt" >0.00</span></p>
                                                         </div>
-                                                        <button class="btn btn-primary text-uppercase">Checkout</button>
+                                                        <button class="btn btn-primary text-uppercase" onclick="notcreated()">Checkout</button>
                                                 </div>
                                                 <!-- discount code -->
                                                 <div class="discount-code mt-3 shadow">
@@ -168,6 +168,7 @@
                 </div>
         </div>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
 
@@ -227,6 +228,15 @@
                 }else{
                         error_trw.innerHTML = "Please enter a valid code | code is shah";
                 }
+        }
+
+        const notcreated = () => {
+                swal({
+                        title: "Checkout page!",
+                        text: "checkout page has not been created yet!",
+                        icon: "warning",
+                        button: "Try later!",
+                      });
         }
 
 
