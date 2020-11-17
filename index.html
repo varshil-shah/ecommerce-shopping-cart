@@ -45,7 +45,7 @@
                                                                                                         <button class="page-link" href="#" onclick="decreaseNumber('textbox','itemval')"><i class="fa fa-minus"></i></button>
                                                                                                 </li>
                                                                                                 <li class="page-item">
-                                                                                                        <input type="text" name="" id="textbox" value="0" class="page-link">
+                                                                                                        <input readonly type="text" name="" id="textbox" value="0" class="page-link">
                                                                                                 </li>
                                                                                                 <li class="page-item">
                                                                                                         <button class="page-link" href="#" onclick="increaseNumber('textbox','itemval')"><i class="fa fa-plus"></i></button>
@@ -95,7 +95,7 @@
                                                                                                         <button class="page-link" href="#" onclick="decreaseNumber('textbox1','itemval1')"><i class="fa fa-minus"></i></button>
                                                                                                 </li>
                                                                                                 <li class="page-item">
-                                                                                                        <input type="text" name="" id="textbox1" value="0" class="page-link">
+                                                                                                        <input readonly type="text" name="" id="textbox1" value="0" class="page-link">
                                                                                                 </li>
                                                                                                 <li class="page-item">
                                                                                                         <button class="page-link" href="#" onclick="increaseNumber('textbox1','itemval1')"><i class="fa fa-plus"></i></button>
@@ -175,6 +175,7 @@
         var product_total_amt = document.getElementById('product_total_amt');     
         var total_cart_amt = document.getElementById('total_cart_amt');
         var shipping_charge = document.getElementById('shipping_charge');
+        var count = 0;
 
         var discount = document.getElementById('discount_code1');
 
@@ -215,9 +216,14 @@
                 let totalamtcurr = parseInt(total_cart_amt.innerHTML);
                 let error_trw = document.getElementById('error_trw');
                 if(discount.value === "shah") {
-                        let newtotalamt = parseInt(total_cart_amt.innerHTML) - 15;
-                        total_cart_amt.innerHTML = parseInt(newtotalamt);
-                        error_trw.innerHTML = "Congrtulations! you have got $15 discount";
+                        if(count <= 0){
+                                let newtotalamt = parseInt(total_cart_amt.innerHTML) - 15;
+                                total_cart_amt.innerHTML = parseInt(newtotalamt);
+                                error_trw.innerHTML = "Congrtulations! you have got $15 discount";
+                                count++;
+                        }else{
+                                error_trw.innerHTML = "Code is applied once";
+                        }
                 }else{
                         error_trw.innerHTML = "Please enter a valid code | code is shah";
                 }
