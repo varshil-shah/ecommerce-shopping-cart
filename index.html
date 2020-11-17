@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="style.css">
+<title>Ecommerce Shopping Cart</title>
+</head>
+<body class="bg-light">
+         
+        <div class="container-fluid">
+                <div class="row">
+                        <div class="col-md-10 col-11 mx-auto">
+                                <div class="row my-5 gx-3">
+                                        <!-- left side div -->
+                                        <div class="col-md-12 col-lg-8 col-11 mx-auto main-cart mb-lg-0 mb-5 shadow">
+                                                <div class="card p-4">
+                                                        <h2 class="py-4 font-weight-bold">Cart (2 items)</h2>
+                                                        <div class="row">
+                                                                <!-- cart image div -->
+                                                                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product_image">
+                                                                        <img src="images/shirt-1-removebg-preview.png" class="img-fluid" alt="Cart image">
+                                                                </div>
+                                                                <!-- cart product details -->
+                                                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                                                        <div class="row">
+                                                                                <!-- product name -->
+                                                                                <div class="col-lg-6 card-title">
+                                                                                        <h1 class="mb-4 product-name">White Shirt</h1>
+                                                                                        <p class="mb-2">White Shirt</p>
+                                                                                        <p class="mb-2">Color - White</p>
+                                                                                        <p class="mb-2">Size - M</p>
+                                                                                </div>
+
+                                                                                <!-- quantity increment decrement -->
+                                                                                <div class="col-6">
+                                                                                        <ul class="pagination justify-content-end set_quantity">
+                                                                                                <li class="page-item">
+                                                                                                        <button class="page-link" href="#" onclick="decreaseNumber('textbox','itemval')"><i class="fa fa-minus"></i></button>
+                                                                                                </li>
+                                                                                                <li class="page-item">
+                                                                                                        <input type="text" name="" id="textbox" value="0" class="page-link">
+                                                                                                </li>
+                                                                                                <li class="page-item">
+                                                                                                        <button class="page-link" href="#" onclick="increaseNumber('textbox','itemval')"><i class="fa fa-plus"></i></button>
+                                                                                                </li>
+                                                                                        </ul>
+                                                                                </div>
+                                                                        </div>
+                                                                        <!-- remove and price -->
+                                                                        <div class="row">
+                                                                                <div class="col-8 d-flex justify-content-between remove-wish">
+                                                                                        <p><i class="fa fa-trash fa-2x"></i></p>
+                                                                                        <p><i class="fa fa-heart fa-2x"></i></p>
+                                                                                </div>
+                                                                                <div class="col-4 d-flex justify-content-end price-money">
+                                                                                        <h3>$ <span id="itemval">0.00</span></h3>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                                <hr>
+
+                                                <!-- second cart -->
+
+                                                <div class="card p-4">
+                                                        <div class="row">
+                                                                <!-- cart image div -->
+                                                                <div class="col-md-5 col-11 mx-auto bg-light d-flex justify-content-center align-items-center shadow product-image">
+                                                                        <img src="images/shirt-2-removebg-preview.png" class="img-fluid" alt="Cart image">
+                                                                </div>
+                                                                <!-- cart product details -->
+                                                                <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                                                        <div class="row">
+                                                                                <!-- product name -->
+                                                                                <div class="col-lg-6 card-title">
+                                                                                        <h1 class="mb-4 product-name">Greenish Shirt</h1>
+                                                                                        <p class="mb-2">Greenish Shirt</p>
+                                                                                        <p class="mb-2">Color - Green</p>
+                                                                                        <p class="mb-2">Size - M</p>
+                                                                                </div>
+
+                                                                                <!-- quantity increment decrement -->
+                                                                                <div class="col-6">
+                                                                                        <ul class="pagination justify-content-end set_quantity">
+                                                                                                <li class="page-item">
+                                                                                                        <button class="page-link" href="#" onclick="decreaseNumber('textbox1','itemval1')"><i class="fa fa-minus"></i></button>
+                                                                                                </li>
+                                                                                                <li class="page-item">
+                                                                                                        <input type="text" name="" id="textbox1" value="0" class="page-link">
+                                                                                                </li>
+                                                                                                <li class="page-item">
+                                                                                                        <button class="page-link" href="#" onclick="increaseNumber('textbox1','itemval1')"><i class="fa fa-plus"></i></button>
+                                                                                                </li>
+                                                                                        </ul>
+                                                                                </div>
+                                                                        </div>
+                                                                        <!-- remove and price -->
+                                                                        <div class="row">
+                                                                                <div class="col-8 d-flex justify-content-between remove-wish">
+                                                                                        <p><i class="fa fa-trash fa-2x"></i></p>
+                                                                                        <p><i class="fa fa-heart fa-2x"></i></p>
+                                                                                </div>
+                                                                                <div class="col-4 d-flex justify-content-end price-money">
+                                                                                        <h3>$ <span id="itemval1">0.00</span></h3>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- right side div -->
+                                        <div class="col-md-12 col-lg-4 col-11 mx-auto mt-lg-0 mt-md-5">
+                                                <div class="right-side p-3 shadow bg-white">
+                                                        <h2 class="product-name mb-5">Total amount</h2>
+                                                        <div class="price-indiv d-flex justify-content-between">
+                                                                <p>Product amount</p>
+                                                                <p>$<span id="product_total_amt">0.00</span></p>
+                                                        </div>
+                                                        <div class="price-indiv d-flex justify-content-between">
+                                                                <p>Shipping charge</p>
+                                                                <p>$ <span id="shipping_charge">50.0</span></p>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="total-amount d-flex justify-content-between font-weight-bold">
+                                                                <p>The total amount (including VAT)</p>
+                                                                <p>$ <span class="" id="total_cart_amt" >0.00</span></p>
+                                                        </div>
+                                                        <button class="btn btn-primary text-uppercase">Checkout</button>
+                                                </div>
+                                                <!-- discount code -->
+                                                <div class="discount-code mt-3 shadow">
+                                                        <div class="card">
+                                                                <div class="card-body">
+                                                                        <a class="d-flex justify-content-between" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                                                Add a discount code (optional)
+                                                                                <span><i class="fa fa-chevron-down pt-1"></i></span>
+                                                                        </a>
+                                                                        <div class="collapse" id="collapseExample">
+                                                                                <div class="mt-3">
+                                                                                        <input type="text" name="" id="discount_code1" class="form-control font-weight-bold" placeholder="Enter the discount code">
+                                                                                        <small id="error_trw" class="text-dark mt-3">Code is shah</small>
+                                                                                </div>
+                                                                                <button class="btn btn-primary btn-sm mt-3" onclick="discount_code()">Apply</button>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <!-- dicount code ends -->
+                                                <div class="mt-3 shadow p-3 bg-white">
+                                                        <div class="pt-4">
+                                                                <h5 class="mb-4">Expected delivery date</h5>
+                                                                <p>January 1st 2021 - January 2nd 2021</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha2/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+        var product_total_amt = document.getElementById('product_total_amt');     
+        var total_cart_amt = document.getElementById('total_cart_amt');
+        var shipping_charge = document.getElementById('shipping_charge');
+
+        var discount = document.getElementById('discount_code1');
+
+        const decreaseNumber = (value,itemprice) => {
+                var itemval = document.getElementById(value);
+                var itemprice = document.getElementById(itemprice);
+                //console.log(itemval.value);
+                if(itemval.value <= 0) {
+                        alert('Value must be greater than 1');
+                        itemval.value = 0;
+                }else{
+                        itemval.value = parseInt(itemval.value) - 1;
+                        itemval.style.background = '#fff';
+                        itemval.style.color = '#000';
+                        itemprice.innerHTML = parseInt(itemprice.innerHTML) - 20;
+                        product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 20;
+                        total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+                }
+        }
+
+        const increaseNumber = (value,itemprice) => {
+                var itemval = document.getElementById(value);
+                var itemprice = document.getElementById(itemprice);
+                if(itemval.value >= 5) {
+                        itemval.value = 5;
+                        alert('Maximun 5 items are allowed');
+                        itemval.style.background = 'red';
+                        itemval.style.color = '#fff';
+                }else{
+                        itemval.value = parseInt(itemval.value) + 1;
+                        itemprice.innerHTML = parseInt(itemprice.innerHTML) + 20;
+                        product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 20;
+                        total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+                }
+        }
+
+        const discount_code = () => {
+                let totalamtcurr = parseInt(total_cart_amt.innerHTML);
+                let error_trw = document.getElementById('error_trw');
+                if(discount.value === "shah") {
+                        let newtotalamt = parseInt(total_cart_amt.innerHTML) - 15;
+                        total_cart_amt.innerHTML = parseInt(newtotalamt);
+                        error_trw.innerHTML = "Congrtulations! you have got $15 discount";
+                }else{
+                        error_trw.innerHTML = "Please enter a valid code | code is shah";
+                }
+        }
+
+
+
+
+
+</script>
+</body>
+</html>
