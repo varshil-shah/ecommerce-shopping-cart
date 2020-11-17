@@ -124,16 +124,16 @@
                                                         <h2 class="product-name mb-5">Total amount</h2>
                                                         <div class="price-indiv d-flex justify-content-between">
                                                                 <p>Product amount</p>
-                                                                <p>$<span id="product_total_amt">0.00</span></p>
+                                                                <p>$<span id="product_total_amt">0</span></p>
                                                         </div>
                                                         <div class="price-indiv d-flex justify-content-between">
                                                                 <p>Shipping charge</p>
-                                                                <p>$ <span id="shipping_charge">50.0</span></p>
+                                                                <p>$ <span id="shipping_charge">50</span></p>
                                                         </div>
                                                         <hr>
                                                         <div class="total-amount d-flex justify-content-between font-weight-bold">
                                                                 <p>The total amount (including VAT)</p>
-                                                                <p>$ <span class="" id="total_cart_amt" >0.00</span></p>
+                                                                <p>$ <span class="" id="total_cart_amt">0</span></p>
                                                         </div>
                                                         <button class="btn btn-primary text-uppercase" onclick="notcreated()">Checkout</button>
                                                 </div>
@@ -148,7 +148,7 @@
                                                                         <div class="collapse" id="collapseExample">
                                                                                 <div class="mt-3">
                                                                                         <input type="text" name="" id="discount_code1" class="form-control font-weight-bold" placeholder="Enter the discount code">
-                                                                                        <small id="error_trw" class="text-dark mt-3">Code is shah</small>
+                                                                                        <small id="error_trw" class="text-dark mt-3">coupon is <span class="text-danger">shah</span></small>
                                                                                 </div>
                                                                                 <button class="btn btn-primary btn-sm mt-3" onclick="discount_code()">Apply</button>
                                                                         </div>
@@ -177,6 +177,8 @@
         var total_cart_amt = document.getElementById('total_cart_amt');
         var shipping_charge = document.getElementById('shipping_charge');
         var count = 0;
+
+        console.log();
 
         var discount = document.getElementById('discount_code1');
 
@@ -215,18 +217,40 @@
 
         const discount_code = () => {
                 let totalamtcurr = parseInt(total_cart_amt.innerHTML);
-                let error_trw = document.getElementById('error_trw');
-                if(discount.value === "shah") {
-                        if(count <= 0){
-                                let newtotalamt = parseInt(total_cart_amt.innerHTML) - 15;
-                                total_cart_amt.innerHTML = parseInt(newtotalamt);
-                                error_trw.innerHTML = "Congrtulations! you have got $15 discount";
-                                count++;
-                        }else{
-                                error_trw.innerHTML = "Code is applied once";
-                        }
+                if(totalamtcurr == 0) {
+                        swal({
+                                title: "Coupon code!",
+                                text: "You haven't selected any item!",
+                                icon: "warning",
+                              });
                 }else{
-                        error_trw.innerHTML = "Please enter a valid code | code is shah";
+                        if(discount.value === "shah") {
+                                if(count <= 0){
+                                        let newtotalamt = parseInt(total_cart_amt.innerHTML) - 15;
+                                        total_cart_amt.innerHTML = parseInt(newtotalamt);
+        
+                                        swal({
+                                                title: "Coupon code!",
+                                                text: "You have got the discount of $15!",
+                                                icon: "success",
+                                              });
+                                        count++;
+                                }else{
+                                        swal({
+                                                title: "Coupon code!",
+                                                text: "You have applied coupon code once!",
+                                                icon: "warning",
+                                                button: "Try later!",
+                                              });
+                                }
+                        }else{
+                                swal({
+                                        title: "Coupon code!",
+                                        text: "Your coupon code is invalid!",
+                                        icon: "error",
+                                        button: "Try later!",
+                                      });
+                        }
                 }
         }
 
